@@ -2,6 +2,7 @@
 
 import Section from "@/components/Section";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface Experience {
   company: string;
@@ -11,21 +12,20 @@ interface Experience {
   roleDateRange: string;
   description: string;
   highlights: string[];
+  logo: string;
 }
 
 const experiences: Experience[] = [
   {
     company: "Datadog",
     location: "New York, NY",
-    companyDateRange: "Summer 2025",
+    companyDateRange: "June 2026",
     role: "Software Engineering Intern",
-    roleDateRange: "Summer 2025",
-    description: "Placeholder description - details to be added.",
+    roleDateRange: "",
+    description: "Incoming Summer 2026*",
     highlights: [
-      "Placeholder highlight 1",
-      "Placeholder highlight 2",
-      "Placeholder highlight 3",
     ],
+    logo: "/logos/ddlogo.png",
   },
   {
     company: "Cornell Nexus",
@@ -33,12 +33,14 @@ const experiences: Experience[] = [
     companyDateRange: "2024 – Present",
     role: "Embedded Software Engineer",
     roleDateRange: "2024 – Present",
-    description: "Placeholder description - details to be added.",
+    description: "Developed motor-control software translating PWM duty cycles to precise turning behavior, enabling reliable robotic navigation. Supported PCB validation, communcation protocol debugging, and electrical–mechanical integration across the full embedded stack.",
     highlights: [
-      "Placeholder highlight 1",
-      "Placeholder highlight 2",
-      "Placeholder highlight 3",
+      "Python, Raspberry Pi",
+      "Altium Designer, KiCad, Soldering, Multimeter, Oscilloscope",
+      "I2C, SPI",
+    
     ],
+    logo: "/logos/nexuslogo.png",
   },
   {
     company: "Cornell Maker Club",
@@ -46,12 +48,13 @@ const experiences: Experience[] = [
     companyDateRange: "2024 – Present",
     role: "Backend Software Engineer",
     roleDateRange: "2024 – Present",
-    description: "Placeholder description - details to be added.",
+    description: "Built an end-to-end Arabic speech-verification system combining similarity scoring, and real-time user session management. Designed and deployed a FastAPI + PostgreSQL backend, integrated Whisper for large-scale verse processing, and engineered a pronunciation-verification pipeline using cosine-similarity thresholds.",
     highlights: [
-      "Placeholder highlight 1",
-      "Placeholder highlight 2",
-      "Placeholder highlight 3",
+      "React, FastAPI, PostgreSQL, Open AI API",
+      "Docker, AWS EC2, Hugging Face",
+      "6,000+ Qur’anic verses processed, 61% Similarity Threshold",
     ],
+    logo: "/logos/cmclogo.png",
   },
 ];
 
@@ -64,16 +67,30 @@ function ExperienceCard({ experience, index }: { experience: Experience; index: 
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="bg-white rounded-xl p-8 shadow-sm border border-stone-200"
     >
-      {/* Header with company and date */}
-      <div className="flex justify-between items-start mb-1">
-        <h3 className="text-2xl font-bold text-stone-900">{experience.company}</h3>
-        <span className="text-stone-500 text-sm whitespace-nowrap ml-4">
-          {experience.companyDateRange}
-        </span>
+      {/* Header with logo, company and date */}
+      <div className="flex items-start gap-4 mb-4">
+        {/* Logo */}
+        <div className="w-16 h-16 flex-shrink-0 rounded-xl overflow-hidden shadow-sm">
+          <Image
+            src={experience.logo}
+            alt={`${experience.company} logo`}
+            width={64}
+            height={64}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
+        {/* Company info */}
+        <div className="flex-grow">
+          <div className="flex justify-between items-start">
+            <h3 className="text-2xl font-bold text-stone-900">{experience.company}</h3>
+            <span className="text-stone-500 text-sm whitespace-nowrap ml-4">
+              {experience.companyDateRange}
+            </span>
+          </div>
+          <p className="text-slate-500">{experience.location}</p>
+        </div>
       </div>
-      
-      {/* Location */}
-      <p className="text-slate-500 mb-4">{experience.location}</p>
       
       {/* Role with date */}
       <div className="flex justify-between items-start mb-3">

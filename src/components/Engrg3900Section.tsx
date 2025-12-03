@@ -2,47 +2,59 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 /**
  * ENGRG 3900 section - Engineering Leadership course work.
  */
 
-const leadershipCards = [
+interface LeadershipCard {
+  id: number;
+  title: string;
+  description: string;
+  content: string;
+  subSections?: {
+    title: string;
+    content: string;
+  }[];
+  images?: string[];
+}
+
+const leadershipCards: LeadershipCard[] = [
   {
     id: 1,
-    title: "What is Engineering Leadership",
-    description: "[Add your understanding of engineering leadership and what it means to you]",
-    content: "[Add detailed content about your understanding of engineering leadership. What does it mean to lead in technical environments? How do engineers influence and guide teams?]",
+    title: "What is ENGRG 3900",
+    description: "The first class in the Engineering Leadership Certificate Program",
+    content: "This is the first class in the Engineering Leadership Certificate Program. Through experiential and collaborative learning, written reflections, and coaching you will develop the self-knowledge and self-management skills foundational to courageous leadership.",
   },
   {
     id: 2,
     title: "Self Discovery Process",
-    description: "[Describe your self-discovery journey and key insights you gained]",
-    content: "[Add detailed content about your self-discovery process. What exercises or reflections helped you understand yourself better? What surprised you?]",
+    description: "A journey of learning to take up space and show up authentically",
+    content: "I walked into this class without a clear sense of how I show up as a leader or even as a person. I knew I needed to work on showing up and actually taking my space, and that ended up being one of the most valuable things I learned in the whole process. Taking up space with my voice, taking up space with my body, and not hesitating to stand upright with my shoulders back all became part of how I've learned to present myself.",
   },
   {
     id: 3,
     title: "Clifton Strengths Assessment",
-    description: "[Share your top strengths and how they influence your leadership style]",
-    content: "[Add your Clifton Strengths results and analysis. What are your top 5 strengths? How do they manifest in your daily life and leadership approach?]",
+    description: "Discovering my top strengths: Consistency, Developer, Relator, Harmony, and Empathy",
+    content: "When I first received my CliftonStrengths results, I was both curious and skeptical. The assessment revealed my top five strengths as consistency, developer, relator, harmony, and empathy. Some of these made sense right away, while others surprised me and pushed me to think about myself in ways I hadn't before. Out of these, consistency stood out as the strength that felt most naturally tied to who I am. CliftonStrengths defines consistency as a craving for stable routines, not perfection, but steadiness. For me, this resonates deeply. I find myself structuring almost every part of my life around routines, from how I study and take notes to how I exercise. There's something satisfying about checking boxes off a list, seeing order in the chaos, and knowing I've followed through.",
+    images: ["/logos/clifton1.png", "/logos/clifton2.png"],
   },
   {
     id: 4,
     title: "Best Self Feedback Project",
-    description: "[Reflect on feedback received and how it shaped your self-awareness]",
-    content: "[Add detailed content about the feedback you received from others. What themes emerged? How did this feedback align or contrast with your self-perception?]",
-  },
-  {
-    id: 5,
-    title: "Awareness as a Leader",
-    description: "[Discuss your growth in self-awareness and understanding of others]",
-    content: "[Add detailed content about developing awareness. How has your understanding of yourself and others evolved? What practices help you stay aware?]",
-  },
-  {
-    id: 6,
-    title: "Future Leadership Goals",
-    description: "[Share your vision and goals for your leadership journey ahead]",
-    content: "[Add detailed content about your leadership aspirations. Where do you see yourself? What kind of leader do you want to become?]",
+    description: "Understanding my unique contributions through reflected feedback",
+    content: "",
+    subSections: [
+      {
+        title: "What is the Best Self Feedback Project?",
+        content: "This project was a \"Reflected Best Self\" exercise where you reach out to people from different parts of your life and ask them for short stories about times when they saw you at your best: moments where you added real value, showed leadership, overcame challenges, or made a positive impact. After collecting these narratives, you look for patterns and themes across all the feedback, then use those insights to build a portrait of your strengths and how you naturally show up in the world. The whole point is to help you understand your unique contributions and learn how to lean into your strengths as a teammate and leader.",
+      },
+      {
+        title: "What I Discovered from the Feedback",
+        content: "At my best, I am a calm, empathetic, and fair leader who stays composed under pressure, balances care with honesty, and anchors decisions in my core values of faith, family, responsibility, authenticity, helping others, and good character. When I am at my best, I show up by listening first, keeping my word, naming hard truths with respect, and being a steady person others can lean on when things are painful or uncertain. I want to live this more consistently and to do so, I will pause before reacting, choose courageous conversations over avoidance, set clear boundaries so I can keep commitments, and seek regular consultation and feedback to stay aligned with my values.",
+      },
+    ],
   },
 ];
 
@@ -126,7 +138,7 @@ export default function Engrg3900Section() {
 
         {/* Cards Grid */}
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid md:grid-cols-2 gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -236,34 +248,46 @@ export default function Engrg3900Section() {
                     className="max-w-3xl mx-auto"
                   >
                     <div className="prose prose-stone prose-lg max-w-none">
-                      <p className="text-stone-600 leading-relaxed text-lg mb-8">
-                        {selectedCardData.description}
-                      </p>
-                      
-                      <div className="bg-stone-50 rounded-2xl p-8 border border-stone-100">
-                        <p className="text-stone-700 leading-relaxed">
-                          {selectedCardData.content}
-                        </p>
-                      </div>
+                      {/* Main content if exists */}
+                      {selectedCardData.content && (
+                        <div className="bg-stone-50 rounded-2xl p-8 border border-stone-100 mb-8">
+                          <p className="text-stone-700 leading-relaxed">
+                            {selectedCardData.content}
+                          </p>
+                        </div>
+                      )}
 
-                      {/* Placeholder for additional content */}
-                      <div className="mt-8 pt-8 border-t border-stone-200">
-                        <h4 className="text-xl font-semibold text-stone-900 mb-4">Key Takeaways</h4>
-                        <ul className="space-y-3 text-stone-600">
-                          <li className="flex items-start gap-3">
-                            <span className="w-1.5 h-1.5 bg-red-500 rounded-full mt-2.5 flex-shrink-0" />
-                            <span>[Add key takeaway 1]</span>
-                          </li>
-                          <li className="flex items-start gap-3">
-                            <span className="w-1.5 h-1.5 bg-red-500 rounded-full mt-2.5 flex-shrink-0" />
-                            <span>[Add key takeaway 2]</span>
-                          </li>
-                          <li className="flex items-start gap-3">
-                            <span className="w-1.5 h-1.5 bg-red-500 rounded-full mt-2.5 flex-shrink-0" />
-                            <span>[Add key takeaway 3]</span>
-                          </li>
-                        </ul>
-                      </div>
+                      {/* Images side by side */}
+                      {selectedCardData.images && selectedCardData.images.length > 0 && (
+                        <div className="grid grid-cols-2 gap-6 mb-8">
+                          {selectedCardData.images.map((image, index) => (
+                            <div 
+                              key={index} 
+                              className="bg-stone-50 rounded-2xl p-4 border border-stone-100 flex items-center justify-center"
+                            >
+                              <Image
+                                src={image}
+                                alt={`${selectedCardData.title} image ${index + 1}`}
+                                width={400}
+                                height={400}
+                                className="w-full h-auto object-contain rounded-xl"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Sub-sections for cards like Best Self Feedback */}
+                      {selectedCardData.subSections && selectedCardData.subSections.map((section, index) => (
+                        <div key={index} className="mb-8">
+                          <h4 className="text-xl font-semibold text-stone-900 mb-4">{section.title}</h4>
+                          <div className="bg-stone-50 rounded-2xl p-8 border border-stone-100">
+                            <p className="text-stone-700 leading-relaxed">
+                              {section.content}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </motion.div>
 
