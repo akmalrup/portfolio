@@ -17,7 +17,7 @@ export const SECTIONS: SectionConfig[] = [
   { id: "home", label: "Home" },
   { id: "about-me", label: "About Me" },
   { id: "engrg-3900", label: "ENGRG 3900" },
-  { id: "resume", label: "Resume" },
+  { id: "experience", label: "Experience" },
   { id: "contact", label: "Contact" },
 ];
 

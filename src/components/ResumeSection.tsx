@@ -3,79 +3,123 @@
 import Section from "@/components/Section";
 import { motion } from "framer-motion";
 
-/**
- * Resume section - summary of experience and resume download.
- * 
- * To customize:
- * - Update the summary text and skills list
- * - Place your resume PDF in the /public folder (e.g., /public/resume.pdf)
- * - Update the href in the download button to match your resume filename
- */
+interface Experience {
+  company: string;
+  location: string;
+  companyDateRange: string;
+  role: string;
+  roleDateRange: string;
+  description: string;
+  highlights: string[];
+}
+
+const experiences: Experience[] = [
+  {
+    company: "Datadog",
+    location: "New York, NY",
+    companyDateRange: "Summer 2025",
+    role: "Software Engineering Intern",
+    roleDateRange: "Summer 2025",
+    description: "Placeholder description - details to be added.",
+    highlights: [
+      "Placeholder highlight 1",
+      "Placeholder highlight 2",
+      "Placeholder highlight 3",
+    ],
+  },
+  {
+    company: "Cornell Nexus",
+    location: "Ithaca, NY",
+    companyDateRange: "2024 – Present",
+    role: "Embedded Software Engineer",
+    roleDateRange: "2024 – Present",
+    description: "Placeholder description - details to be added.",
+    highlights: [
+      "Placeholder highlight 1",
+      "Placeholder highlight 2",
+      "Placeholder highlight 3",
+    ],
+  },
+  {
+    company: "Cornell Maker Club",
+    location: "Ithaca, NY",
+    companyDateRange: "2024 – Present",
+    role: "Backend Software Engineer",
+    roleDateRange: "2024 – Present",
+    description: "Placeholder description - details to be added.",
+    highlights: [
+      "Placeholder highlight 1",
+      "Placeholder highlight 2",
+      "Placeholder highlight 3",
+    ],
+  },
+];
+
+function ExperienceCard({ experience, index }: { experience: Experience; index: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="bg-white rounded-xl p-8 shadow-sm border border-stone-200"
+    >
+      {/* Header with company and date */}
+      <div className="flex justify-between items-start mb-1">
+        <h3 className="text-2xl font-bold text-stone-900">{experience.company}</h3>
+        <span className="text-stone-500 text-sm whitespace-nowrap ml-4">
+          {experience.companyDateRange}
+        </span>
+      </div>
+      
+      {/* Location */}
+      <p className="text-slate-500 mb-4">{experience.location}</p>
+      
+      {/* Role with date */}
+      <div className="flex justify-between items-start mb-3">
+        <h4 className="font-semibold text-stone-800">{experience.role}</h4>
+        <span className="text-stone-500 text-sm whitespace-nowrap ml-4">
+          {experience.roleDateRange}
+        </span>
+      </div>
+      
+      {/* Description */}
+      <p className="text-stone-600 mb-4 leading-relaxed">{experience.description}</p>
+      
+      {/* Highlights */}
+      <ul className="space-y-2">
+        {experience.highlights.map((highlight, i) => (
+          <li key={i} className="flex items-start text-stone-600">
+            <span className="w-1.5 h-1.5 bg-stone-400 rounded-full mt-2 mr-3 flex-shrink-0" />
+            {highlight}
+          </li>
+        ))}
+      </ul>
+    </motion.div>
+  );
+}
 
 export default function ResumeSection() {
   return (
-    <Section id="resume" ariaLabel="Resume" className="bg-white">
-      <h2 className="text-4xl md:text-5xl font-bold text-stone-900 mb-8">Resume</h2>
-      <div className="space-y-8">
-        <div className="space-y-4 text-lg text-stone-600">
-          <p>
-            I bring a strong foundation in engineering principles combined with practical 
-            experience in software development and project management. My academic journey 
-            has been complemented by hands-on projects and collaborative work.
-          </p>
-        </div>
+    <Section id="experience" ariaLabel="Experience" className="bg-stone-100">
+      <div className="text-center mb-12">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl md:text-5xl font-bold text-stone-900 mb-4"
+        >
+          Experience
+        </motion.h2>
+        <div className="w-16 h-1 bg-stone-800 mx-auto" />
+      </div>
 
-        <div>
-          <h3 className="text-2xl font-semibold text-stone-900 mb-4">Core Skills</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {[
-              "Problem Solving",
-              "Software Development",
-              "Data Analysis",
-              "Project Management",
-              "Technical Communication",
-              "Team Collaboration",
-            ].map((skill) => (
-              <div
-                key={skill}
-                className="bg-stone-50 px-4 py-3 rounded-lg text-center text-stone-700 border border-stone-200"
-              >
-                {skill}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="pt-6">
-          <motion.a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-stone-900 text-white rounded-lg font-medium hover:bg-stone-800 transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <svg
-              className="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              />
-            </svg>
-            Download Resume PDF
-          </motion.a>
-          <p className="text-sm text-stone-500 mt-3">
-            Note: Place your resume PDF in the /public folder and update the link above
-          </p>
-        </div>
+      <div className="space-y-6 max-w-4xl mx-auto">
+        {experiences.map((experience, index) => (
+          <ExperienceCard key={experience.company} experience={experience} index={index} />
+        ))}
       </div>
     </Section>
   );
 }
-
