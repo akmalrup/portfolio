@@ -142,7 +142,7 @@ export default function Engrg3900Section() {
           </h2>
           <div className="w-12 h-0.5 bg-red-600 mx-auto mb-6" />
           <p className="text-stone-600 max-w-2xl mx-auto">
-            Insight into my leadership journey and personal development process
+            Insight into my leadership journey :')
           </p>
         </motion.div>
 
