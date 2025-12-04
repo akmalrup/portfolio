@@ -63,7 +63,7 @@ export default function AboutSection() {
             Outside of CS and ECE, I love video games and working out. During senior summer of high school, I spent most of my time playing Valorant and peaked around top 2K players in North America which is well under 0.1 percent of the player base
             </p>
             <p>
-            On Campus, you can find me helping the campus MSA, designg canva posters, running the instagram, and organizing/helping out with events :)
+            On Campus, you can find me helping the campus MSA, designing canva posters, running the instagram, and organizing/helping out with events :)
             </p>
             <div className="border-t border-stone-800 pt-6 mt-8">
               <p className="text-stone-500 italic text-sm">
