@@ -57,7 +57,7 @@ export default function AboutSection() {
               I started at Cornell in Arts and Sciences studying CS. I later switched to ECE because I wanted a deeper understanding of the whole computer stack. Now that I know how the layers work together, I’m driven to build software that actually helps people.
             </p>
             <p>
-            Last summer I interned in the EmPRISE Lab, which focuses on caregiving robots. My project was developing a nipple sensor that detects disease early in baby cows. I handled the sensor’s PCB design. At the same time, I kept working on my Arabic verse detection software as a passion project.
+            Last summer I was a research intern in the EmPRISE Lab, which focuses on caregiving robots. My project was developing a nipple sensor that detects disease early in baby cows. I handled the sensor’s PCB design. At the same time, I kept working on my Arabic verse detection software as a passion project.
             </p>
             <p>
             Outside of CS and ECE, I love video games and working out. During senior summer of high school, I spent most of my time playing Valorant and peaked around top 2K players in North America which is well under 0.1 percent of the player base.
