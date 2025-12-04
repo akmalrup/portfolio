@@ -25,7 +25,8 @@ const leadershipCards: LeadershipCard[] = [
     id: 1,
     title: "What is ENGRG 3900",
     description: "The first class in the Engineering Leadership Certificate Program",
-    content: "This is the first class in the Engineering Leadership Certificate Program. Through experiential and collaborative learning, written reflections, and coaching you will develop the self-knowledge and self-management skills foundational to courageous leadership.",
+    content: "This is the introductory course in the Engineering Leadership Certificate Program. Through hands-on activities, group collaboration, personal reflection, and coaching, students build the self-awareness and self-management skills that form the foundation of effective, courageous leadership.",
+    images: ["/logos/engrglogo.png"],
   },
   {
     id: 2,
@@ -266,19 +267,19 @@ export default function Engrg3900Section() {
                         </div>
                       )}
 
-                      {/* Images side by side */}
+                      {/* Images - centered for single, side by side for multiple */}
                       {selectedCardData.images && selectedCardData.images.length > 0 && (
-                        <div className="grid grid-cols-2 gap-6 mb-8">
+                        <div className={`mb-8 ${selectedCardData.images.length === 1 ? 'flex justify-center' : 'grid grid-cols-2 gap-6'}`}>
                           {selectedCardData.images.map((image, index) => (
                             <div 
                               key={index} 
-                              className="bg-stone-50 rounded-2xl p-4 border border-stone-100 flex items-center justify-center"
+                              className={`bg-stone-50 rounded-2xl p-6 border border-stone-100 flex items-center justify-center ${selectedCardData.images!.length === 1 ? 'max-w-md' : ''}`}
                             >
                               <Image
                                 src={image}
                                 alt={`${selectedCardData.title} image ${index + 1}`}
-                                width={400}
-                                height={400}
+                                width={selectedCardData.images!.length === 1 ? 300 : 400}
+                                height={selectedCardData.images!.length === 1 ? 300 : 400}
                                 className="w-full h-auto object-contain rounded-xl"
                               />
                             </div>

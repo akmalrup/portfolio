@@ -71,7 +71,7 @@ export default function HomeSection() {
               Hi,
             </p>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-stone-900 mb-8">
-              I am <span className="font-semibold">Akmal</span>
+              I'm <span className="font-semibold">Akmal</span>
             </h1>
             <p className="text-xl md:text-2xl text-stone-700 mb-4 max-w-xl font-medium">
               I&apos;m majoring in Electrical & Computer Engineering, with a Minor in Computer Science
