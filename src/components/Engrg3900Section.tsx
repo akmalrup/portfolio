@@ -30,8 +30,18 @@ const leadershipCards: LeadershipCard[] = [
   {
     id: 2,
     title: "Self Discovery Process",
-    description: "A journey of learning to take up space and show up authentically",
-    content: "I walked into this class without a clear sense of how I show up as a leader or even as a person. I knew I needed to work on showing up and actually taking my space, and that ended up being one of the most valuable things I learned in the whole process. Taking up space with my voice, taking up space with my body, and not hesitating to stand upright with my shoulders back all became part of how I've learned to present myself.",
+    description: "A journey of defining my purpose and living by my values",
+    content: "",
+    subSections: [
+      {
+        title: "Discovering My Purpose",
+        content: "During ENGRG 3900, we were asked to define our purpose. I had never actually put mine into words before. When I sat with it, I realized my core values are Islam, family, responsibility, authenticity, helping others, and striving for good character. These values shape how I want to live, even though some naturally take the lead depending on what I'm going through.\n\nTogether, they feed into my purpose: to have a presence that makes others feel safe, to uplift the people around me, and to lead with authenticity, empathy, and character.",
+      },
+      {
+        title: "Living After Defining My Values",
+        content: "The most valuable thing I learned in this class is how to ground myself and my interactions in my values and purpose. Once I named them, I started asking whether I was actually representing them in what I do and how I show up. I've noticed moments where a value slips or gets overshadowed, but having a clear definition gives me a framework to recognize when something is being over- or under-represented. That awareness alone has been huge.\n\nGoing forward, I want to live my values in balance rather than pouring everything into just one. I tend to fixate on responsibility or achievement and let others, like character or authenticity, fade into the background. To change that, I want to check in with myself regularly and reflect on how I've been living each value. Catching misalignment early will help me stay grounded before things drift too far.\n\nMost importantly, I want to remind myself that I am not defined by a single value. Staying balanced and whole matters more than being perfect in one area. If I can keep that perspective, I'll not only live more in alignment with who I am, but also find more peace and happiness in how I move through life.",
+      },
+    ],
   },
   {
     id: 3,
@@ -127,12 +137,11 @@ export default function Engrg3900Section() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-serif italic text-stone-900 mb-4">
-            ENGRG 3900
+            Engineering Leadership Certificate Program
           </h2>
           <div className="w-12 h-0.5 bg-red-600 mx-auto mb-6" />
           <p className="text-stone-600 max-w-2xl mx-auto">
-            Engineering Leadership - A journey of self-discovery, personal growth, and developing 
-            the skills to lead with authenticity and purpose.
+            Insight into my leadership journey and personal development process
           </p>
         </motion.div>
 
@@ -281,10 +290,12 @@ export default function Engrg3900Section() {
                       {selectedCardData.subSections && selectedCardData.subSections.map((section, index) => (
                         <div key={index} className="mb-8">
                           <h4 className="text-xl font-semibold text-stone-900 mb-4">{section.title}</h4>
-                          <div className="bg-stone-50 rounded-2xl p-8 border border-stone-100">
-                            <p className="text-stone-700 leading-relaxed">
-                              {section.content}
-                            </p>
+                          <div className="bg-stone-50 rounded-2xl p-8 border border-stone-100 space-y-4">
+                            {section.content.split('\n\n').map((paragraph, pIndex) => (
+                              <p key={pIndex} className="text-stone-700 leading-relaxed">
+                                {paragraph}
+                              </p>
+                            ))}
                           </div>
                         </div>
                       ))}
