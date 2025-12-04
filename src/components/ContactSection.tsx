@@ -67,14 +67,14 @@ export default function ContactSection() {
                 <div>
                   <p className="text-sm text-stone-500">Email</p>
                   <p className="text-stone-200 group-hover:text-white transition-colors">
-                    your.email@example.com
+                    ar2346@cornell.edu
                   </p>
                 </div>
               </motion.a>
 
               {/* LinkedIn */}
               <motion.a
-                href="https://linkedin.com/in/yourprofile"
+                href="https://www.linkedin.com/in/akmal-rupasingha-b2704820a/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 group"
@@ -93,14 +93,14 @@ export default function ContactSection() {
                 <div>
                   <p className="text-sm text-stone-500">LinkedIn</p>
                   <p className="text-stone-200 group-hover:text-white transition-colors">
-                    /in/yourprofile
+                    /in/akmalrup
                   </p>
                 </div>
               </motion.a>
 
               {/* GitHub */}
               <motion.a
-                href="https://github.com/yourusername"
+                href="https://github.com/akmalrup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 group"
@@ -123,7 +123,7 @@ export default function ContactSection() {
                 <div>
                   <p className="text-sm text-stone-500">GitHub</p>
                   <p className="text-stone-200 group-hover:text-white transition-colors">
-                    /yourusername
+                    github.com/akmalrup
                   </p>
                 </div>
               </motion.a>
@@ -140,16 +140,16 @@ export default function ContactSection() {
             <h3 className="text-lg font-semibold text-white mb-6">Beyond Code</h3>
             <div className="space-y-5">
               <div>
-                <p className="text-stone-200 font-medium">[Hobby 1]</p>
-                <p className="text-stone-500 text-sm">[Description]</p>
+                <p className="text-stone-200 font-medium">Valorant</p>
+                <p className="text-stone-500 text-sm">Peaked Top 2k in North America (Immortal 3)</p>
               </div>
               <div>
-                <p className="text-stone-200 font-medium">[Hobby 2]</p>
-                <p className="text-stone-500 text-sm">[Description]</p>
+                <p className="text-stone-200 font-medium">3x3 Speedcubing</p>
+                <p className="text-stone-500 text-sm">Best Time: 27.33</p>
               </div>
               <div>
-                <p className="text-stone-200 font-medium">[Hobby 3]</p>
-                <p className="text-stone-500 text-sm">[Description]</p>
+                <p className="text-stone-200 font-medium">Gym</p>
+                <p className="text-stone-500 text-sm">215lbs to 150lbs lost</p>
               </div>
             </div>
           </motion.div>

@@ -57,22 +57,33 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 bg-stone-50/90 backdrop-blur-sm border-b border-stone-200"
     >
       <nav className="max-w-7xl mx-auto px-6 py-4">
-        <ul className="flex justify-end items-center gap-8">
-          {SECTIONS.map((section) => (
-            <li key={section.id}>
-              <a
-                href={`#${section.id}`}
-                className={`text-sm font-medium transition-colors hover:text-stone-900 ${
-                  activeSection === section.id
-                    ? "text-stone-900 border-b-2 border-stone-900 pb-1"
-                    : "text-stone-600"
-                }`}
-              >
-                {section.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="flex justify-between items-center">
+          {/* Name on the left */}
+          <a 
+            href="#home" 
+            className="text-sm font-medium text-stone-700 hover:text-stone-900 transition-colors"
+          >
+            Akmal Rupasingha
+          </a>
+          
+          {/* Navigation links on the right */}
+          <ul className="flex items-center gap-8">
+            {SECTIONS.map((section) => (
+              <li key={section.id}>
+                <a
+                  href={`#${section.id}`}
+                  className={`text-sm font-medium transition-colors hover:text-stone-900 ${
+                    activeSection === section.id
+                      ? "text-stone-900 border-b-2 border-stone-900 pb-1"
+                      : "text-stone-600"
+                  }`}
+                >
+                  {section.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </nav>
     </motion.header>
   );

@@ -125,11 +125,17 @@ export default function ResumeSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-4xl md:text-5xl font-bold text-stone-900 mb-4"
+          className="text-4xl md:text-5xl font-serif italic text-stone-900 mb-4"
         >
           Experience
         </motion.h2>
-        <div className="w-16 h-1 bg-stone-800 mx-auto" />
+        <motion.div 
+          className="w-12 h-0.5 bg-red-600 mx-auto"
+          initial={{ width: 0 }}
+          whileInView={{ width: 48 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+        />
       </div>
 
       <div className="space-y-6 max-w-4xl mx-auto">

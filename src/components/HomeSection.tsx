@@ -67,15 +67,17 @@ export default function HomeSection() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
             className="flex flex-col justify-center"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-stone-900 mb-6">
-              Akmal Rupasingha
-            </h1>
-            <p className="text-xl md:text-2xl text-stone-600 mb-6">
-              Engineering Student & Problem Solver
+            <p className="text-4xl md:text-5xl lg:text-6xl font-light text-stone-700 mb-2">
+              Hi,
             </p>
-            <p className="text-lg text-stone-500 mb-10 max-w-xl">
-              Welcome to my portfolio. I&apos;m passionate about engineering, technology, and creating 
-              innovative solutions to complex challenges.
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-stone-900 mb-8">
+              I am <span className="font-semibold">Akmal</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-stone-700 mb-4 max-w-xl font-medium">
+              I&apos;m majoring in Electrical & Computer Engineering, with a Minor in Computer Science
+            </p>
+            <p className="text-xl md:text-2xl text-red-700 mb-10">
+              @ Cornell University &apos;27
             </p>
             <div className="flex gap-4">
               <motion.a
@@ -87,12 +89,12 @@ export default function HomeSection() {
                 Get in Touch
               </motion.a>
               <motion.a
-                href="#resume"
+                href="#experience"
                 className="px-8 py-3 border-2 border-stone-900 text-stone-900 rounded-lg font-medium hover:bg-stone-50 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                View Resume
+                View Experience
               </motion.a>
             </div>
           </motion.div>

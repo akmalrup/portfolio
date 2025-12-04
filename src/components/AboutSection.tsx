@@ -51,23 +51,23 @@ export default function AboutSection() {
             transition={{ delay: 0.3, duration: 0.6 }}
           >
             <p>
-              I&apos;m <span className="text-white font-semibold">[Your Name]</span>, a student at [Your University] pursuing [Your Major].
+              I&apos;m <span className="text-white font-semibold">Akmal Rupasingha</span>, a student at Cornell University pursuing Electrical and Computer Engineering.
             </p>
             <p>
-              [Add your story here - what projects have you worked on? What drives you?]
+              I started at Cornell in Arts and Sciences studying CS. I later switched to ECE because I wanted a deeper understanding of the whole computer stack. Now that I know how the layers work together, I’m driven to build software that actually helps people.
             </p>
             <p>
-              [Share your experiences - internships, research, or notable achievements]
+            Last summer I interned in the EmPRISE Lab, which focuses on caregiving robots. My project was developing a nipple sensor that detects disease early in baby cows. I handled the sensor’s PCB design. At the same time, I kept working on my Arabic verse detection software as a passion project.
             </p>
             <p>
-              [What are you passionate about outside of your main field?]
+            Outside of CS and ECE, I love video games and working out. During senior summer of high school, I spent most of my time playing Valorant and peaked around top 2K players in North America which is well under 0.1 percent of the player base.
             </p>
             <p>
-              [Any leadership roles or extracurricular involvement?]
+            On Campus, you can find me helping the campus MSA, designg canva posters, running the instagram, and organizing/helping out with events :)
             </p>
             <div className="border-t border-stone-800 pt-6 mt-8">
               <p className="text-stone-500 italic text-sm">
-                [Add a current status or what you&apos;re working on now]
+                This summer I will be a SWE intern in NYC! 
               </p>
             </div>
           </motion.div>
@@ -88,7 +88,8 @@ export default function AboutSection() {
                 <div>
                   <h4 className="text-stone-400 font-medium mb-2">Languages</h4>
                   <p className="text-stone-500 text-sm">
-                    [Programming languages]
+                    Python, C++, Java, JavaScript, TypeScript, 
+                    HTML, CSS, Assembly, Verilog
                   </p>
                 </div>
 
@@ -96,15 +97,17 @@ export default function AboutSection() {
                 <div>
                   <h4 className="text-stone-400 font-medium mb-2">Technologies</h4>
                   <p className="text-stone-500 text-sm">
-                    [Frameworks, tools, etc.]
+                    React, Next.js, Node.js, Git, AWS, Linux, 
+                    Microsoft Office Suite, Canva 
                   </p>
                 </div>
 
                 {/* Domain Skills */}
                 <div>
-                  <h4 className="text-stone-400 font-medium mb-2">Domain Skills</h4>
+                  <h4 className="text-stone-400 font-medium mb-2">ECE Fundamentals</h4>
                   <p className="text-stone-500 text-sm">
-                    [Specialized skills]
+                    Altium Designer, KiCad, Bash Scripting,
+                    Soldering, Multimeter, Oscilloscope 
                   </p>
                 </div>
 
@@ -112,7 +115,8 @@ export default function AboutSection() {
                 <div>
                   <h4 className="text-stone-400 font-medium mb-2">Backend & Databases</h4>
                   <p className="text-stone-500 text-sm">
-                    [Backend technologies]
+                  MySQL, FastAPI,
+                  Firebase, PostgreSQL 
                   </p>
                 </div>
               </div>
@@ -123,15 +127,16 @@ export default function AboutSection() {
               <h3 className="text-xl font-semibold text-white mb-6">Academic Foundation</h3>
               <div className="space-y-4">
                 <div>
-                  <h4 className="text-stone-400 font-medium mb-1">[Primary Field]</h4>
+                  <h4 className="text-stone-400 font-medium mb-1">Electrical & Computer Engineering</h4>
                   <p className="text-stone-500 text-sm">
-                    [Relevant coursework]
+                    Digital Logic, Computer Architecture, Circuit Analysis, Physics E&M
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-stone-400 font-medium mb-1">[Secondary Field]</h4>
+                  <h4 className="text-stone-400 font-medium mb-1">Computer Science</h4>
                   <p className="text-stone-500 text-sm">
-                    [Relevant coursework]
+                  Data Structures & Algorithms, Object-Oriented Programming, Discrete Structures, Linear
+                  Algebra, Backend Development
                   </p>
                 </div>
               </div>
@@ -142,12 +147,12 @@ export default function AboutSection() {
               <h3 className="text-xl font-semibold text-white mb-6">Campus Involvement</h3>
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <span className="text-stone-400 font-medium">[Role]</span>
-                  <span className="text-stone-500 text-sm">[Organization]</span>
+                  <span className="text-stone-400 font-medium">Co-President</span>
+                  <span className="text-stone-500 text-sm">Muslim Educational and Cultural Assocation</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-stone-400 font-medium">[Role]</span>
-                  <span className="text-stone-500 text-sm">[Organization]</span>
+                  <span className="text-stone-400 font-medium">Cohort Member</span>
+                  <span className="text-stone-500 text-sm">Engineering Leadering Certification Program</span>
                 </div>
               </div>
             </div>
