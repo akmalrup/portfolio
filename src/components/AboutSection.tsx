@@ -54,7 +54,7 @@ export default function AboutSection() {
               I&apos;m <span className="text-white font-semibold">Akmal Rupasingha</span>, a student at Cornell University pursuing Electrical and Computer Engineering.
             </p>
             <p>
-              I started at Cornell in Arts and Sciences studying CS. I later switched to ECE because I wanted a deeper understanding of the whole computer stack. Now that I know how the layers work together, I’m driven to build software that actually helps people.
+              I started at Cornell in Arts and Sciences studying CS. I later switched to ECE because I wanted a deeper understanding of the whole computer stack. Now that I know how the layers work together, I am driven to build software that actually helps people.
             </p>
             <p>
             Last summer I was a research intern in the EmPRISE Lab, which focuses on caregiving robots. My project was developing a nipple sensor that detects disease early in baby cows. I handled the sensor’s PCB design. At the same time, I kept working on my Arabic verse detection software as a passion project.
