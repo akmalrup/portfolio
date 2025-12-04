@@ -149,7 +149,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <p className="text-stone-200 font-medium">Gym</p>
-                <p className="text-stone-500 text-sm">215lbs to 150lbs lost</p>
+                <p className="text-stone-500 text-sm">65lbs down (215lbs to 150lbs lost) </p>
               </div>
             </div>
           </motion.div>
